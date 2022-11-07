@@ -17,32 +17,57 @@
 }
 
 .logo img {
-    width: 35px;
-    height: 35px;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
 }
 
 .logo h1{
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--primary-color);
+    margin-bottom: 0;
+
 }
 .menu {
     display: flex;
     align-items: center;
-    column-gap: 2.8rem;
+    column-gap: 2.7rem;
+    margin-bottom: 0;
+   
 }
 
 .nav_item a{
     color: var(--primary-color);
     font-weight: 500;
     cursor: pointer;
+    text-decoration: none;
 }
-.nav_icons {
+.nav_icon {
     display: flex;
     align-items: center;
     column-gap: 1.2rem;
+
 }
 
 .nav_icon span i {
-    font-size:rem;
+    font-size:1.3rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.nav_icon span img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-bottom: 35%;
+}
+
+.mobile_menu {
+    font-size: 1.9rem;
+    color: var(--primary-color);
+    display: none;
+}
+.nav_active {
+   font-weight: 700 !important; 
 }
