@@ -7,4 +7,4 @@ function Helmet(props) {
   )
 }
 
-export default Helmet
+export default Helmet;
