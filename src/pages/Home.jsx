@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import Helmet from '../components/Helmet/Helmet'
 import { Container,Row,Col } from 'reactstrap'
@@ -9,7 +9,7 @@ import Services from '../services/Services'
 import ProductList from '../components/UI/ProductList'
 
 function Home() {
-
+  
   return (
     <Helmet title={"Home"}>
       <section className="hero_section">
