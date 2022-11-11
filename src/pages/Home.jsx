@@ -6,6 +6,7 @@ import heroImg from "../assets/images/best_laptops.png"
 import "../styles/home.css"
 import { motion } from "framer-motion"
 import Services from '../services/Services'
+import ProductList from '../components/UI/ProductList'
 
 function Home() {
 
@@ -29,8 +30,8 @@ function Home() {
               <img src={heroImg} alt=""/>
             </div>
             </Col>
-          </Row>
 
+          </Row>
         </Container>
       </section>
       <Services/>
@@ -39,6 +40,8 @@ function Home() {
           <Col lg="12" className="text-center">
             <h2 className="section_title">Tranding Product</h2>
           </Col>
+          <ProductList />
+
         </Row>
       </section>
     </Helmet>

@@ -1,0 +1,42 @@
+.product_item{
+    cursor: pointer;
+    margin: 10px;
+  
+}
+ img{
+    width: 300px;
+    
+}
+
+.product_info h3{
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-top: 10px;
+}
+.product_info span {
+    font-size: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.product_info a{
+    text-decoration: none;
+}
+.product_info a:hover{
+    color: rgb(58, 58, 214);
+}
+.product_card-button .price {
+   font-size: 1.2rem;
+   font-weight: 500;
+}
+.product_card-button span i {
+    font-size: 1.3rem;
+    padding: 3px;
+    margin: 5px;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 100%;
+}
+.copy_item {
+    display: flex;
+    justify-content: center;
+}
