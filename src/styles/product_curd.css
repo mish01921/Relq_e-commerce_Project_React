@@ -1,18 +1,18 @@
+
 .product_item{
     cursor: pointer;
     margin: 10px;
-  
 }
- img{
+.product_img img {
     width: 300px;
-    
+    height: auto;
 }
-
+ 
 .product_info h3{
     font-size: 1.1rem;
-    color: var(--primary-color);
     font-weight: 600;
     margin-top: 10px;
+    padding: 0;
 }
 .product_info span {
     font-size: 1rem;
@@ -24,7 +24,7 @@
 .product_info a:hover{
     color: rgb(58, 58, 214);
 }
-.product_card-button .price {
+.product_card-bottom .price {
    font-size: 1.2rem;
    font-weight: 500;
 }
@@ -39,4 +39,6 @@
 .copy_item {
     display: flex;
     justify-content: center;
+    align-items: center;
+    
 }

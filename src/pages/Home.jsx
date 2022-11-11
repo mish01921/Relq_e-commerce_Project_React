@@ -7,9 +7,17 @@ import "../styles/home.css"
 import { motion } from "framer-motion"
 import Services from '../services/Services'
 import ProductList from '../components/UI/ProductList'
+import products from '../assets/data/products'
 
 function Home() {
-  
+  const[data,setData] = useState(products)
+
+  useEffect(()=>{
+    const filtredProducts = products.filter((item) => item.category === "Laptop");
+    console.log(filtredProducts)
+    setData(filtredProducts)
+  }, [])
+ 
   return (
     <Helmet title={"Home"}>
       <section className="hero_section">
@@ -38,10 +46,17 @@ function Home() {
       <section className="trending-product">
         <Row>
           <Col lg="12" className="text-center">
-            <h2 className="section_title">Tranding Product</h2>
+            <h2 className="section_title">Trending Product</h2>
           </Col>
-          <ProductList />
-
+          <ProductList data={data}/>
+          
+        </Row>
+      </section>
+      <section className="best_sales">
+      <Row>
+          <Col lg="12" className="text-center">
+            <h2 className="section_title">Best Sales</h2>
+          </Col>
         </Row>
       </section>
     </Helmet>
