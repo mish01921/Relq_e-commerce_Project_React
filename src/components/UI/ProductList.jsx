@@ -1,13 +1,16 @@
 import React from 'react'
 import ProductCard from './ProductCard'
 
-function ProductList() {
+function ProductList({data}) {
   return (
     <div className="copy_item">
-      <ProductCard/>
-      <ProductCard/>
-      <ProductCard/>
-      <ProductCard/>
+      {
+        data.map((item,index) => (
+          <ProductCard key={index} item={item}/>
+        ))
+      }
+     
+      
      
     </div>
   )
