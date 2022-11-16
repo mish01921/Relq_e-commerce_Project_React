@@ -12,7 +12,7 @@ import products from '../assets/data/products'
 function Home() {
 
   const[data,setData] = useState(products)
-
+  
   useEffect(()=>{
     const filtredProducts = products.filter((item) => item.category === "Laptop");
     console.log(filtredProducts)
@@ -24,6 +24,7 @@ function Home() {
     
   })
   return (
+   
     <Helmet title={"Home"}>
       <section className="hero_section">
         <Container>
@@ -68,6 +69,7 @@ function Home() {
             </Row>
           </Container>
         </section>
+        <h1>ok</h1>
     </Helmet >
   )
 }
