@@ -7,7 +7,7 @@ function ProductCard({ item }) {
   return (
 
 
-    <Col lg="2" md="4" >
+    <Col lg="4" md="auto" >
       <div className="product_item">
         <div className="product_img">
 

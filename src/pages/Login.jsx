@@ -34,8 +34,8 @@ function Login() {
 
   const emailHandler = (e) => {
     setEmail(e.target.value)
-    const re =
-      /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+    const re = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
+      
     if (!re.test(String(e.target.value).toLowerCase())) {
       setEmailError("Incorrect email")
     } else {
