@@ -4,14 +4,9 @@ import ProductCard from './ProductCard'
 function ProductList({data}) {
   return (
     <div className="copy_item">
-      {
-        data.map((item,index) => (
-          <ProductCard key={index} item={item}/>
-        ))
-      }
-     
-      
-     
+    {data.map((item,index)=>(
+      <ProductCard item={item} key={index} />
+    ))}  
     </div>
   )
 }
