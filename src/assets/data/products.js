@@ -8,6 +8,8 @@ import productImg04 from "../images/magicbook-Bestsales04.png"
 import productImg05 from "../images/lenovo-BestSales05.png"
 import productImg06 from "../images/MSI_NB_GE76_BestSales06.png"
 import productImg07 from "../images/LG-BestSales07.png"
+import productImg08 from "../images/macbool-BestSales08.png"
+
 
 const products = [
     {
@@ -179,6 +181,24 @@ const products = [
       imgUrl: productImg07,
       category: "BestSales",
       price: 1250,
+      shortDesc:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum  aperiam quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      reviews: [
+        {
+          rating: 4.7,
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        },
+      ],
+      avgRating: 4.5,
+    },
+    {
+      id: "08",
+      productName: "",
+      imgUrl: productImg08,
+      category: "BestSales",
+      price: 1800,
       shortDesc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
       description:

@@ -1,5 +1,5 @@
-.hero_section{
-    background:#b6ddfb;
+.hero_section {
+    background: #b6ddfb;
 }
 
 .hero_content h2 {
@@ -10,18 +10,18 @@
     font-family: 'Courgette', cursive;
 }
 
-.hero_content p{
+.hero_content p {
     color: rgb(0, 0, 0);
     line-height: 24px;
     font-family: 'Playfair Display SC', serif;
     font-size: 1.1rem;
 }
-.hero_section p:nth-child(1){
-   font-weight: 500;
-   
+
+.hero_section p:nth-child(1) {
+    font-weight: 500;
 }
 
-.buy_btn{ 
+.buy_btn {
     border: none;
     outline: none;
     padding: 8px 20px;
@@ -31,17 +31,40 @@
     font-size: 1rem;
     margin-top: 40px;
 }
-.buy_btn a{
-    color:white;
+
+.buy_btn a {
+    color: white;
     text-decoration: none;
-}.buy_btn a:hover{
-    color:white;
+}
+
+.buy_btn a:hover {
+    color: white;
 }
 
 .hero_content {
     padding-top: 45px;
 }
+
 .section_title {
-font-weight: 600;
+    font-weight: 600;
 }
 
+.timer_count {
+    background: #2d3540;
+    height: 300px;
+}
+
+.timer_count img {
+    width: 90% !important;
+    height: 60% !important;
+    object-fit: contain;
+}
+
+.store_btn {
+    background: #fff;
+    font-weight: 600;
+}
+
+.store_btn a:hover {
+    color: var(--primary-color);
+}

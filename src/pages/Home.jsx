@@ -8,7 +8,8 @@ import { motion } from "framer-motion"
 import Services from '../services/Services'
 import ProductList from '../components/UI/ProductList'
 import products from '../assets/data/products'
-
+import counterImg from "../assets/images/counter-timer.jpg"
+import Clock from '../components/UI/Clock'
 
 function Home() {
 const [trendingProducts,setTrendingProducts] = useState([]);
@@ -56,7 +57,7 @@ const [bestSalesProducts,setBestSalesProducts] = useState([]);
         <Container>
           <Row>
             <Col lg="12" className="text-center">
-              <h2 className="section_title">Trending Products</h2>
+              <h2 className="section_title p-2">Trending Products</h2>
             </Col>
             <ProductList data={trendingProducts}/>
           </Row>
@@ -66,13 +67,35 @@ const [bestSalesProducts,setBestSalesProducts] = useState([]);
       <section className="best_sales">
       <Container>
           <Row>
-            <Col lg="12" className="text-center">
+            <Col lg="12"  className="text-center">
               <h2 className="section_title">Best Sales</h2>
             </Col>
 
             <ProductList data={bestSalesProducts} />
           </Row>
         </Container>
+      </section>
+
+      <section className="timer_count">
+        <Container>
+          <Row>
+            <Col lg="6" mb="6">
+
+            <div className="clock_top-content">
+              <h4>Limited Offers</h4>
+              <h3>Quality Laptops</h3>
+            </div>
+              <Clock />
+              <motion.button whileTap={{scale:1.2}} className="buy_btn store_button">
+                <Link to="/shop">Visit Store</Link>
+              </motion.button>
+            </Col>
+            <Col lg="6" mb="6" className="text-end">
+              <img src={counterImg} alt=""  />
+            </Col>
+          </Row>
+        </Container>
+
       </section>
     </Helmet >
   )
