@@ -6,7 +6,7 @@ import logo from "../../assets/images/eco-logo.png"
 import userIcon from "../../assets/images/user-icon.png"
 import { motion } from "framer-motion"
 
-const nav_liks = [
+const nav_links = [
     {
         path: "home",
         display: "Home"
@@ -33,20 +33,10 @@ function Header() {
                         </div>
                     </div>
 
-
                     <div className="navigation">
                         <ul className="menu">
-                            {/* <li className="nav_item">
-                <NavLink to="home">Home</NavLink>
-            </li>
-            <li className="nav_item">
-                <NavLink to="home">Shop</NavLink>
-            </li>
-            <li className="nav_item">
-                <NavLink to="home">Cart</NavLink>
-            </li> */}
-                            {
-                                nav_liks.map((item, index) => (
+                               {
+                                nav_links.map((item, index) => (
                                     <li key={index} className="nav_item">
                                         <NavLink to={item.path} className={(navClass) => navClass.isActive ? "nav_active" : ""}>{item.display}</NavLink>
                                     </li>

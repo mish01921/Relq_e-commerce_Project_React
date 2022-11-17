@@ -1,10 +1,10 @@
 .service_item{
-    padding: 20px;
+    padding: 10px;
     display: flex;
     align-items: center;
-    column-gap: 0.8rem;
+    column-gap: 0.6rem;
     border-radius: 15px;
-    line-height: 1.1rem;
+    line-height: 0.8rem;
     cursor: pointer;
 }
 .service_item span i{
@@ -15,8 +15,9 @@
     font-weight: 500!important;
 }
 .service_item h3 {
+    color: var(--primary-color);
     font: 1.1rem sans-serif;
-    font-weight: 500;
+    font-weight: 600;
 }
 .service_item p{
     color: var(--primary-color);

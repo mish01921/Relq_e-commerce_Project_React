@@ -15,13 +15,16 @@
 
 /* reset browser default */
 * {
+  
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
   font-family: "Montserrat", sans-serif;
+ 
 }
 
 h1,
@@ -60,6 +63,7 @@ img {
 
 section {
   padding: 60px 0px;
+  
 }
 .section_title {
   color: var(--primary-color);
