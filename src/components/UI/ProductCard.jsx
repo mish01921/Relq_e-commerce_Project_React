@@ -1,19 +1,15 @@
 import React from 'react'
 import { motion } from "framer-motion"
-import "../../styles/product_curd.css"
+import "../../styles/product-card.css"
 import { Col } from "reactstrap"
 import { Link } from 'react-router-dom'
+
 function ProductCard({ item }) {
   return (
-
-
-    <Col lg="4" md="auto" >
+    <Col lg="3" md="4">
       <div className="product_item">
         <div className="product_img">
-
-          <motion.img whileHover={{ scale: 1.1 }} src={item.imgUrl} alt="This is a Laptop image" />
-
-
+          <motion.img whileHover={{ scale: 1.1 }} src={item.imgUrl} alt="This is a Laptop image"/>
         </div>
         <div className=" p-2 product_info">
           <h3 className="product_name"><Link to={`/shop/${item.id}`}>{item.productName}</Link></h3>
