@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import "./header.css"
 import { NavLink } from 'react-router-dom'
 import { Container, Row } from "reactstrap"
@@ -19,10 +19,31 @@ const nav_links = [
         path: "cart",
         display: "Cart"
     }
-]
+];
 
 function Header() {
-    return <header className='header'>
+    const headerRef = useRef(null);
+
+    const menuRef = useRef(null)
+    const stickyHeaderFunc = () => {
+        window.addEventListener("scroll", () => {
+            if (
+                document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                headerRef.current.classList.add("sticky_header");
+            } else {
+                headerRef.current.classList.remove("sticky_header");
+            }
+        });
+    };
+
+    useEffect(() => {
+        stickyHeaderFunc();
+        return () => window.removeEventListener("scroll", stickyHeaderFunc)
+    })
+
+    const menuToggle = () => menuRef.current.classList.toggle("active_menu");
+
+    return <header className='header' ref={headerRef}>
         <Container>
             <Row>
                 <div className="nav_wrapper">
@@ -33,9 +54,9 @@ function Header() {
                         </div>
                     </div>
 
-                    <div className="navigation">
+                    <div className="navigation" ref={menuRef} onClick={menuToggle}>
                         <ul className="menu">
-                               {
+                            {
                                 nav_links.map((item, index) => (
                                     <li key={index} className="nav_item">
                                         <NavLink to={item.path} className={(navClass) => navClass.isActive ? "nav_active" : ""}>{item.display}</NavLink>
@@ -49,13 +70,14 @@ function Header() {
                     <div className="nav_icon">
                         <span className="fav_icon"><i className="ri-heart-line"></i></span>
                         <span className="cart_icon"> <i className="ri-shopping-bag-line"></i></span>
-                        <span><motion.img whileTap={{scale: 1.2}} src={userIcon} alt="" /></span>
-
-
+                        <span><motion.img whileTap={{ scale: 1.2 }} src={userIcon} alt="" /></span>
+                        <div className="mobile_menu">
+                        <span onClick={menuToggle}>
+                            <i className="ri-menu-line"></i>
+                            </span>
                     </div>
-                    <div className="mobile_menu">
-                        <span><i className="ri-menu-line"></i></span>
                     </div>
+                    
                 </div>
             </Row>
         </Container>
