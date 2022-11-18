@@ -2,7 +2,7 @@ import React from 'react'
 import "./header.css"
 import { NavLink } from 'react-router-dom'
 import { Container, Row } from "reactstrap"
-import logo from "../../assets/images/eco-logo.png"
+import logo from "../../assets/images/Logo-TrandBrand.jpg"
 import userIcon from "../../assets/images/user-icon.png"
 import { motion } from "framer-motion"
 
