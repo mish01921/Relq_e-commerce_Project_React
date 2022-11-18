@@ -1,30 +1,37 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Helmet from '../components/Helmet/Helmet'
+import Services from '../services/Services'
+import Clock from '../components/UI/Clock'
+import ProductList from '../components/UI/ProductList'
 import { Container, Row, Col } from 'reactstrap'
 import heroImg from "../assets/images/best_laptops.png"
 import "../styles/home.css"
 import { motion } from "framer-motion"
-import Services from '../services/Services'
-import ProductList from '../components/UI/ProductList'
 import products from '../assets/data/products'
 import counterImg from "../assets/images/counter-timer.jpg"
-import Clock from '../components/UI/Clock'
+
 
 function Home() {
 const [trendingProducts,setTrendingProducts] = useState([]);
 const [bestSalesProducts,setBestSalesProducts] = useState([]);
-  const year = new Date().getFullYear()
+const [accessories,setAccessories] = useState([]);
 
+  const year = new Date().getFullYear();
 
   useEffect(() =>{
-    const filterdTrendingProducts = products.filter(item => item.category === "Laptop")
+    const filterdTrendingProducts = products.filter(item => item.category === "Laptop");
     setTrendingProducts(filterdTrendingProducts)
 
-    const filterdBestSalesProducts = products.filter(item => item.category === "BestSales")
-
+    const filterdBestSalesProducts = products.filter(item => item.category === "BestSales");
     setBestSalesProducts(filterdBestSalesProducts)
+
+    const filterdAccessoriesProducts = products.filter(item => item.category === "Accessories");
+    setAccessories(filterdAccessoriesProducts)
+
+    
   },[])
+
   return (
 
     <Helmet title={"Home"}>
@@ -47,8 +54,6 @@ const [bestSalesProducts,setBestSalesProducts] = useState([]);
               </div>
             </Col>
 
-
-
           </Row>
         </Container>
       </section>
@@ -56,7 +61,7 @@ const [bestSalesProducts,setBestSalesProducts] = useState([]);
     <section className="trending_product">
         <Container>
           <Row>
-            <Col lg="12" className="text-center">
+            <Col lg="12" className="text-center mb-5">
               <h2 className="section_title p-2">Trending Products</h2>
             </Col>
             <ProductList data={trendingProducts}/>
@@ -67,10 +72,9 @@ const [bestSalesProducts,setBestSalesProducts] = useState([]);
       <section className="best_sales">
       <Container>
           <Row>
-            <Col lg="12"  className="text-center">
+            <Col lg="12"  className="text-center mb-5">
               <h2 className="section_title">Best Sales</h2>
             </Col>
-
             <ProductList data={bestSalesProducts} />
           </Row>
         </Container>
@@ -95,8 +99,20 @@ const [bestSalesProducts,setBestSalesProducts] = useState([]);
             </Col>
           </Row>
         </Container>
+      </section>
+
+      <section className="new_accessories">
+        <Container>
+          <Row>
+            <Col lg="12" className="text-center mb-5">
+            <h2 className="section_title">Accessories</h2>
+            </Col>
+            <ProductList data={accessories} />
+          </Row>
+        </Container>
 
       </section>
+
     </Helmet >
   )
 }

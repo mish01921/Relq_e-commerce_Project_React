@@ -1,6 +1,6 @@
 import React from 'react'
 function Helmet(props) {
-    document.title = "TrandBrand -" +  props.title;
+    document.title = "TrendBrand -" +  props.title;
   return (
     <div className="w-100">{props.children}</div>
   )
