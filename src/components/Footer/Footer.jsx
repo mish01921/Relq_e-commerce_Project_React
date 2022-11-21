@@ -9,7 +9,7 @@ function Footer() {
     <footer className="footer">
       <Container>
         <Row>
-          <Col lg="4">
+          <Col lg="4" md="6" className="mb-4">
             <div className="logo">
               <div>
                 <h1 className="text-white">TrendBrand</h1>
@@ -20,7 +20,7 @@ function Footer() {
             </p>
           </Col>
 
-          <Col lg="3">
+          <Col lg="3" md="3">
             <div className="footer_quick-links">
               <h4 className="quick_links-title">Top Category</h4>
               <ListGroup>
@@ -39,7 +39,7 @@ function Footer() {
             </div>
           </Col>
 
-          <Col lg="2">
+          <Col lg="2" md="3">
             <div className="footer_quick-links">
               <h4 className="quick_links-title">Useful Links</h4>
               <ListGroup>
@@ -62,7 +62,7 @@ function Footer() {
             </div>
           </Col>
 
-          <Col lg="3">
+          <Col lg="3" md="3">
             <div className="footer_quick-links">
               <h4 className="quick_links-title">Contacts</h4>
               <ListGroup className="footer_content">
