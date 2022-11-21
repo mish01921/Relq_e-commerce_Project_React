@@ -1,4 +1,4 @@
-.service_item{
+.service_item {
     padding: 10px;
     display: flex;
     align-items: center;
@@ -6,21 +6,55 @@
     border-radius: 15px;
     line-height: 0.8rem;
     cursor: pointer;
+    margin-bottom: 1rem;
 }
-.service_item span i{
-    font-size:2.5rem;
+
+.service_item span i {
+    font-size: 2.5rem;
     background: var(--primary-color);
     color: #fff;
     padding: 10px;
-    font-weight: 500!important;
+    font-weight: 500 !important;
 }
+
 .service_item h3 {
     color: var(--primary-color);
     font: 1.1rem sans-serif;
     font-weight: 600;
 }
-.service_item p{
+
+.service_item p {
     color: var(--primary-color);
     font-size: 0.9rem;
     font-weight: 500;
 }
+
+@media only screen and (max-width: 912px) {
+    .service_item p {
+        font-size: 1rem;
+        line-height: 16px;
+        font-weight: 500;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .service_item span i {
+        font-size: 1.8rem;
+        padding: 5px;
+    }
+
+    .service_item h3 {
+        font-size: 1.2rem;
+    }
+
+    .service_item {
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .service_item h3 {
+        font-size: 1.2rem;
+    }
+}
+

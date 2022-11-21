@@ -17,6 +17,13 @@
     font-size: 1.1rem;
 }
 
+@media only screen and (max-width: 912px) {
+    .hero_content p {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+}
+
 .hero_section p:nth-child(1) {
     font-weight: 500;
 }
@@ -47,7 +54,9 @@
 
 .section_title {
     font-weight: 600;
+   
 }
+
 
 .timer_count {
     background: #2d3540;
@@ -67,4 +76,42 @@
 
 .store_btn a:hover {
     color: var(--primary-color);
+}
+@media only screen and (max-width: 992px){
+    .hero_section h2 {
+        font-size: 2rem;
+    }
+    .section_title {
+        font-size: 1.2rem;
+    }
+    .counter_img {
+    display: none;
+    }
+    .clock_top-content {
+        text-align: center;
+    }
+    .count_down-col {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .hero_section h2 {
+        font-size: 2rem;
+    }
+    .hero_content p {
+        font-size: 1rem;
+    }
+    .hero_img img {
+        margin-top: 4rem;
+    }
+    .buy_btn a {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    .hero_content {
+        padding-top: 0;
+    }
 }

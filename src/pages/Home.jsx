@@ -72,7 +72,7 @@ const [accessories,setAccessories] = useState([]);
       <section className="best_sales">
       <Container>
           <Row>
-            <Col lg="12"  className="text-center mb-5">
+            <Col lg="12" md="12"  className="text-center mb-5">
               <h2 className="section_title">Best Sales</h2>
             </Col>
             <ProductList data={bestSalesProducts} />
@@ -83,8 +83,7 @@ const [accessories,setAccessories] = useState([]);
       <section className="timer_count">
         <Container>
           <Row>
-            <Col lg="6" mb="6">
-
+            <Col className="count_down-col">
             <div className="clock_top-content">
               <h4>Limited Offers</h4>
               <h3>Quality Laptops</h3>
@@ -94,7 +93,7 @@ const [accessories,setAccessories] = useState([]);
                 <Link to="/shop">Visit Store</Link>
               </motion.button>
             </Col>
-            <Col lg="6" mb="6" className="text-end">
+            <Col lg="6" md="12" className="text-end counter_img">
               <img src={counterImg} alt=""  />
             </Col>
           </Row>
