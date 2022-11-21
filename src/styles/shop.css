@@ -1,0 +1,30 @@
+.filter_widget select {
+    padding: 8px 20px;
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+    background: #1d83a845;
+    font-weight: 600;
+}
+
+.filter_widget select :focus {
+    outline: none !important;
+}
+
+.filter_widget select option{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 0.9rem;
+}
+
+.search_box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.search_box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 8px 10px;
+}
