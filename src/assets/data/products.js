@@ -186,7 +186,7 @@ const products = [
     },
     {
       id: "07",
-      productName: "",
+      productName: "BestSales",
       imgUrl: productImg07,
       category: "BestSales",
       price: 1250,

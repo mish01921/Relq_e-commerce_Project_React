@@ -13,11 +13,13 @@ import counterImg from "../assets/images/counter-timer.jpg"
 
 
 function Home() {
+  const year = new Date().getFullYear();
+
 const [trendingProducts,setTrendingProducts] = useState([]);
 const [bestSalesProducts,setBestSalesProducts] = useState([]);
 const [accessories,setAccessories] = useState([]);
 
-  const year = new Date().getFullYear();
+ 
 
   useEffect(() =>{
     const filterdTrendingProducts = products.filter(item => item.category === "Laptop");
