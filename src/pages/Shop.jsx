@@ -27,7 +27,6 @@ function Shop() {
 
     if(filterValue === "Accessories") {
       const filteredProducts = products.filter(item => item.category === "Accessories" )
-
       setProductsData(filteredProducts)
     }
   }
@@ -35,8 +34,7 @@ function Shop() {
   const handleSearch = e => {
     const searchTerm = e.target.value
 
-    const searchProducts = products.filter(item => item.productName.toLowerCase(). includes(searchTerm.toLowerCase()))
-
+    const searchProducts = products.filter(item => item.productName.toLowerCase().includes(searchTerm.toLowerCase()))
     setProductsData(searchProducts)
   }
 
@@ -47,7 +45,7 @@ function Shop() {
     <section>
       <Container>
         <Row>
-          <Col lg="3" md="3">
+          <Col lg="3" md="6">
             <div className="filter_widget">
               <select onChange={handleFilter}>
                 <option>Filtered by Category</option>
@@ -58,7 +56,7 @@ function Shop() {
               </select>
             </div>
           </Col>
-          <Col lg="3" md="3">
+          <Col lg="3" md="6" className="text-end">
             <div className="filter_widget">
               <select>
                 <option>Sort by</option>
@@ -67,7 +65,7 @@ function Shop() {
               </select>
             </div>
           </Col>
-          <Col lg="6" md="6">
+          <Col lg="6" md="12">
             <div className="search_box">
               <input
                type="text" 
@@ -86,7 +84,7 @@ function Shop() {
       <Container>
         <Row> 
           {
-            productsData.length === 0 ? ( <h1 className="text-center fs-4 " >Products not found &#128542;	 </h1> 
+            productsData.length === 0 ? ( <h1 className="text-center fs-4 " >Products not found <span role="img" aria-label="Smile">&#128542;</span>	</h1>  
             ) : (
               <ProductList data={productsData} />
             )}

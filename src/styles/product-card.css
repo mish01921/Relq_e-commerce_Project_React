@@ -28,7 +28,7 @@
     .product_info span {
         font-size: 1.3rem;
         color: #000;
-        font-weight: 600;
+        font-weight: 500;
     }
 }
 .product_info a{
@@ -67,6 +67,6 @@
         font-size: 1.3rem;
     }
     .product_card-bottom span i{
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 }

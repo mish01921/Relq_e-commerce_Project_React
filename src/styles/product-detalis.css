@@ -91,3 +91,22 @@
     cursor: pointer;
 
 }
+
+.related_title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.buy_btn {
+    color: white;
+    margin-top: 4px;
+    border-radius: 5px;
+}
+@media only screen and (max-width: 768px) {
+    .product_detalis h2 {
+        font-size: 1rem;
+        
+    }
+   
+}

@@ -92,7 +92,7 @@ const [accessories,setAccessories] = useState([]);
             </div>
               <Clock />
               <motion.button whileTap={{scale:1.2}} className="buy_btn store_button">
-                <Link to="/shop">Visit Store</Link>
+                <Link to="shop/">Visit Store</Link>
               </motion.button>
             </Col>
             <Col lg="6" md="12" className="text-end counter_img">
