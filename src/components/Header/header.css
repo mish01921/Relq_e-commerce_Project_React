@@ -55,7 +55,7 @@
 }
 @media only screen and (max-width: 912px) {
     .nav_item a {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         font-weight: 600;
     }
 }
@@ -74,9 +74,25 @@
 .fav_icon {
     position: relative;
 }
+.badge {
+    position: absolute;
+    top: 24%;
+    right: -8%;
+    width: 15px;
+    height: 15px;
+    content: '';
+    background: var(--primary-color);
+    border-radius: 50px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.6rem !important;
+    font-weight: 600;
+    z-index: 10;
+ }
 
 .nav_icon span i {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: var(--primary-color);
     cursor: pointer;
 }

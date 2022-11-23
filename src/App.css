@@ -44,10 +44,6 @@ p {
   font-size: 1rem;
 }
 
-h1,
-h2 {
-  font-size: var(--heading-fontSize);
-}
 
 ul {
   list-style: none;

@@ -5,6 +5,7 @@ import { Container, Row } from "reactstrap"
 import logo from "../../assets/images/Logo-TrandBrand.jpg"
 import userIcon from "../../assets/images/user-icon.png"
 import { motion } from "framer-motion"
+import { useSelector } from "react-redux"
 
 const nav_links = [
     {
@@ -23,7 +24,7 @@ const nav_links = [
 
 function Header() {
     const headerRef = useRef(null);
-
+    const totalQuantity = useSelector(state => state.cart.totalQuantity)
     const menuRef = useRef(null)
     const stickyHeaderFunc = () => {
         window.addEventListener("scroll", () => {
@@ -68,16 +69,26 @@ function Header() {
                     </div>
 
                     <div className="nav_icon">
-                        <span className="fav_icon"><i className="ri-heart-line"></i></span>
-                        <span className="cart_icon"> <i className="ri-shopping-bag-line"></i></span>
+                        <span className="fav_icon">
+                            <i className="ri-heart-line"></i>
+                            <span className="badge">2</span>
+                        </span>
+
+
+                        <span className="cart_icon"> 
+                            <i className="ri-shopping-bag-line"></i>
+                            <span className="badge">{totalQuantity}</span>
+                        </span>
+
                         <span><motion.img whileTap={{ scale: 1.2 }} src={userIcon} alt="" /></span>
+
                         <div className="mobile_menu">
-                        <span onClick={menuToggle}>
-                            <i className="ri-menu-line"></i>
+                            <span onClick={menuToggle}>
+                                <i className="ri-menu-line"></i>
                             </span>
+                        </div>
                     </div>
-                    </div>
-                    
+
                 </div>
             </Row>
         </Container>

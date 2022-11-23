@@ -13,11 +13,13 @@ import counterImg from "../assets/images/counter-timer.jpg"
 
 
 function Home() {
+  const year = new Date().getFullYear();
+
 const [trendingProducts,setTrendingProducts] = useState([]);
 const [bestSalesProducts,setBestSalesProducts] = useState([]);
 const [accessories,setAccessories] = useState([]);
 
-  const year = new Date().getFullYear();
+ 
 
   useEffect(() =>{
     const filterdTrendingProducts = products.filter(item => item.category === "Laptop");
@@ -90,7 +92,7 @@ const [accessories,setAccessories] = useState([]);
             </div>
               <Clock />
               <motion.button whileTap={{scale:1.2}} className="buy_btn store_button">
-                <Link to="/shop">Visit Store</Link>
+                <Link to="shop/">Visit Store</Link>
               </motion.button>
             </Col>
             <Col lg="6" md="12" className="text-end counter_img">
