@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
+import Helmet from "../components/Helmet/Helmet";
 import {
   MDBBtn,
   MDBContainer,
@@ -12,7 +13,8 @@ import {
 }
   from 'mdb-react-ui-kit';
 import { Link } from "react-router-dom"
-import { useEffect } from 'react';
+
+
 
 function Login() {
 
@@ -34,8 +36,8 @@ function Login() {
 
   const emailHandler = (e) => {
     setEmail(e.target.value)
-    const re = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
-      
+    const re = new RegExp("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")
+
     if (!re.test(String(e.target.value).toLowerCase())) {
       setEmailError("Incorrect email")
     } else {
@@ -72,49 +74,46 @@ function Login() {
   }
 
   return (
-    <MDBContainer fluid>
+    <Helmet title="Login">
+      <MDBContainer fluid  className='d-flex align-items-center justify-content-center bg-image' style={{ backgroundImage: 'url(https://i0.wp.com/www.tipsnepal.com/wp-content/uploads/2022/03/f3437-aboutus_image1-1.jpg?resize=720%2C405&quality=100&strip=all&ssl=1)' }}>
+        <MDBRow className='d-flex justify-content-center align-items-center h-100'>
+          <MDBCol col='12'>
+            <MDBCard className='bg-white my-5 mx-auto' style={{ borderRadius: '1rem', maxWidth: '500px' }}>
+              <MDBCardBody className='p-5 w-100 d-flex flex-column'>
 
-      <MDBRow className='d-flex justify-content-center align-items-center h-100'>
-        <MDBCol col='12'>
+                <h2 className="fw-bold mb-2 text-center">Sign in</h2>
+                <p className="text-white-50 mb-3">Please enter your login and password!</p>
 
-          <MDBCard className='bg-white my-5 mx-auto' style={{ borderRadius: '1rem', maxWidth: '500px' }}>
-            <MDBCardBody className='p-5 w-100 d-flex flex-column'>
+                {(emailDirty && emailError) && <div style={{ color: "red" }}>{emailError}</div>}
+                <MDBInput onChange={e => emailHandler(e)} value={email} onBlur={e => blurHandler(e)} wrapperClass='mb-4 w-100' label='Email address' id='formControlLg' name="email" type='email' size="lg" />
 
-              <h2 className="fw-bold mb-2 text-center">Sign in</h2>
-              <p className="text-white-50 mb-3">Please enter your login and password!</p>
+                {(passwordDirty && passwordError) && <div style={{ color: "red" }}>{passwordError}</div>}
+                <MDBInput onChange={e => passwordHandler(e)} value={password} onBlur={e => blurHandler(e)} wrapperClass='mb-4 w-100' label='Password' maxLength={24} id='formControlLg' name="password" type='password' size="lg" />
 
-              {(emailDirty && emailError) && <div style={{ color: "red" }}>{emailError}</div>}
-              <MDBInput onChange={e => emailHandler(e)} value={email} onBlur={e => blurHandler(e)} wrapperClass='mb-4 w-100' label='Email address' id='formControlLg' name="email" type='email' size="lg" />
+                <MDBCheckbox name='flexCheck' id='flexCheckDefault' className='mb-4' label='Remember password' />
+                <p><Link to="/signup">Create an account</Link></p>
 
-              {(passwordDirty && passwordError) && <div style={{ color: "red" }}>{passwordError}</div>}
-              <MDBInput onChange={e => passwordHandler(e)} value={password} onBlur={e => blurHandler(e)} wrapperClass='mb-4 w-100' label='Password' maxLength={24} id='formControlLg' name="password" type='password' size="lg" />
-              
-              <MDBCheckbox name='flexCheck' id='flexCheckDefault' className='mb-4' label='Remember password' />
-              <p className=''><Link to={"checkout"}>Create account</Link></p>
+                <MDBBtn disabled={!formValid} type='submit' size='lg'>
+                  Login
+                </MDBBtn>
+                <hr className="my-4" />
+                <MDBBtn className="mb-2 w-100" size="lg" style={{ backgroundColor: '#dd4b39' }}>
+                  <MDBIcon fab icon="google" className="mx-2" />
+                  Sign in with google
+                </MDBBtn>
 
-              <MDBBtn disabled={!formValid} type='submit' size='lg'>
-                Login
-              </MDBBtn>
+                <MDBBtn className="mb-4 w-100" size="lg" style={{ backgroundColor: '#3b5998' }}>
+                  <MDBIcon fab icon="facebook-f" className="mx-2" />
+                  Sign in with facebook
+                </MDBBtn>
 
-              <hr className="my-4" />
+              </MDBCardBody>
+            </MDBCard>
 
-              <MDBBtn className="mb-2 w-100" size="lg" style={{ backgroundColor: '#dd4b39' }}>
-                <MDBIcon fab icon="google" className="mx-2" />
-                Sign in with google
-              </MDBBtn>
-
-              <MDBBtn className="mb-4 w-100" size="lg" style={{ backgroundColor: '#3b5998' }}>
-                <MDBIcon fab icon="facebook-f" className="mx-2" />
-                Sign in with facebook
-              </MDBBtn>
-
-            </MDBCardBody>
-          </MDBCard>
-
-        </MDBCol>
-      </MDBRow>
-
-    </MDBContainer>
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
+    </Helmet>
   );
 }
 
