@@ -46,15 +46,15 @@ function Cart() {
             </Col>
 
             <Col lg="2">
-              <div>
+              <div> 
                 <h6 className="d-flex align-items-center justify-content-between">SubTotal</h6>
                 <span className="fs-4 fw-bold">${totalAmount}</span>
-              </div>
+              </div >
               <p>Total price of products</p>
               <div>
-                <button className="buy_btn"><Link to="/shop">Countine Shopping</Link></button>
+                <button className="buy_btn w-100"><Link to="/shop">Countine Shopping</Link></button>
 
-                <button className="buy_btn"><Link to="/checkout">Checkout</Link></button>
+                <button className="buy_btn w-100"><Link to="/checkout">Checkout</Link></button>
               </div>
             </Col>
           </Row>

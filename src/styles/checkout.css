@@ -1,0 +1,29 @@
+ .billing_form  .form_group input {
+    border: 1px solid rgba(149, 144, 144, 0.375);
+ }
+.billing_form input {
+    font-size: 13px;
+
+}
+ .checkout_cart {
+    padding: 20px;
+    background: var(--primary-color);
+    color:#fff;
+    border-radius: 5px;
+ }
+
+ .checkout_cart h6,h4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ }
+
+ .checkout_cart h6 {
+    margin-bottom: 16px;
+ }
+ .checkout_cart h4 {
+    bottom: 1px solid rgba(155, 151, 151, 0.455); 
+    padding-top: 20px;
+ }
+
+ 
