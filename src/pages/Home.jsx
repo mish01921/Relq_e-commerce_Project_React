@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import Helmet from '../components/Helmet/Helmet'
-import Services from '../services/Services'
-import Clock from '../components/UI/Clock'
-import ProductList from '../components/UI/ProductList'
-import { Container, Row, Col } from 'reactstrap'
-import heroImg from "../assets/images/best_laptops.png"
-import "../styles/home.css"
-import { motion } from "framer-motion"
-import products from '../assets/data/products'
-import counterImg from "../assets/images/counter-timer.jpg"
-
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Helmet from '../components/Helmet/Helmet';
+import Services from '../services/Services';
+import Clock from '../components/UI/Clock';
+import ProductList from '../components/UI/ProductList';
+import { Container, Row, Col } from 'reactstrap';
+import heroImg from "../assets/images/best_laptops.png";
+import "../styles/home.css";
+import { motion } from "framer-motion";
+import products from '../assets/data/products';
+import counterImg from "../assets/images/counter-timer.jpg";
 
 function Home() {
   const year = new Date().getFullYear();
@@ -19,23 +18,18 @@ const [trendingProducts,setTrendingProducts] = useState([]);
 const [bestSalesProducts,setBestSalesProducts] = useState([]);
 const [accessories,setAccessories] = useState([]);
 
- 
-
   useEffect(() =>{
     const filterdTrendingProducts = products.filter(item => item.category === "Laptop");
-    setTrendingProducts(filterdTrendingProducts)
+    setTrendingProducts(filterdTrendingProducts);
 
     const filterdBestSalesProducts = products.filter(item => item.category === "BestSales");
-    setBestSalesProducts(filterdBestSalesProducts)
+    setBestSalesProducts(filterdBestSalesProducts);
 
     const filterdAccessoriesProducts = products.filter(item => item.category === "Accessories");
-    setAccessories(filterdAccessoriesProducts)
-
-    
+    setAccessories(filterdAccessoriesProducts);
   },[])
 
   return (
-
     <Helmet title={"Home"}>
       <section className="hero_section">
         <Container>

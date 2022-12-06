@@ -1,14 +1,15 @@
 import React from "react"
-import { Routes, Route , Navigate} from "react-router-dom"
-import Home from "../pages/Home"
-import Shop from "../pages/Shop"
-import Cart from "../pages/Cart"
-import ProductDetalis from "../pages/ProductDetalis"
-import Checkout from "../pages/Checkout"
-import Login from "../pages/Login"
-import Signup from "../pages/Signup"
+import { Routes, Route , Navigate} from "react-router-dom";
+import Home from "../pages/Home";
+import Shop from "../pages/Shop";
+import Cart from "../pages/Cart";
+import ProductDetalis from "../pages/ProductDetalis";
+import Checkout from "../pages/Checkout";
+import Login from "../pages/Login";
+import Signup from "../pages/Signup";
 
 function Routers() {
+ 
   return <Routes>
     <Route path="/" element={<Navigate to="/home"/>} />
     <Route path="home" element={<Home/>} />

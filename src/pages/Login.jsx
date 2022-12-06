@@ -1,4 +1,5 @@
-import React, { useState ,useEffect} from 'react';
+import React, { useState } from 'react';
+// import axios from "axios"
 import Helmet from "../components/Helmet/Helmet";
 import {
   MDBBtn,
@@ -9,93 +10,94 @@ import {
   MDBCardBody,
   MDBInput,
   MDBIcon,
-  MDBCheckbox
 }
   from 'mdb-react-ui-kit';
 import { Link } from "react-router-dom"
+import { useDispatch } from 'react-redux';
+import { signin } from '../redux/actions/userActions';
+// import {useNavigate} from "react-router-dom"
 
 
+function Login () {
 
-function Login() {
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [msg, setMsg] = useState("")
+  // const navigate = useNavigate()
+  // const handleChange = async(e) => {
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [emailDirty, setEmailDirty] = useState(false);
-  const [passwordDirty, setPasswordDirty] = useState(false);
-  const [emailError, setEmailError] = useState("Email cannot be empty");
-  const [passwordError, setPasswordError] = useState("Password cannot be empty");
-  const [formValid, setFormValid] = useState(false)
+  //  setData({ ...data, [e.target.id]: e.target.value });
+  // }
+  // const Auth = async(e) => {
+  //   e.preventDefault()
+  //    await axios.post("http://localhost:5000/login", {
+  //     email: data.email,
+  //     password: data.password
 
-  useEffect(() => {
-    if (emailError || passwordError) {
-      setFormValid(false)
-    } else {
-      setFormValid(true)
-    }
-  }, [emailError, passwordError])
+  //   })
 
-  const emailHandler = (e) => {
-    setEmail(e.target.value)
-    const re = new RegExp("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")
+  //     .then((res) => {
+  //       setMsg(res.data.msg);
+  //     })
+  //  .catch((err) => {
+  //       setMsg(err.response.data.msg);
+  //     })
+  // }
 
-    if (!re.test(String(e.target.value).toLowerCase())) {
-      setEmailError("Incorrect email")
-    } else {
-      setEmailError("")
-    }
-  };
+  // const Auth = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     await axios.post("http://localhost:5000/login",{
+  //       email: email,
+  //       password: password
+  //     });
+  //     navigate.push("/home")
+  //   }catch(error){
+  //     if(error.response){
+  //       setMsg(error.response.data.msg);
+  //     }
+  //   }
+  // }
 
-  const passwordHandler = (e) => {
-    setPassword(e.target.value)
-    if (e.target.value.length < 9) {
-      setPasswordError("Password can be longer than 9")
-      if (!e.target.value) {
-        setPasswordError("Password can be longer than 9 ")
-      }
-
-    } else {
-      setPasswordError("")
-    }
-
+  const [email,setEmail] = useState("");
+  const [password,setPassword] = useState("");
+  // const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(signin(email,password))
+    // navigate("/home")
   }
-
-  const blurHandler = (e) => {
-    switch (e.target.name) {
-
-      case "email":
-        setEmailDirty(true)
-        break;
-      case "password":
-        setPasswordDirty(true)
-        break;
-      default:
-    }
-
-  }
+  // console.log(email,password)
 
   return (
     <Helmet title="Login">
-      <MDBContainer fluid  className='d-flex align-items-center justify-content-center bg-image' style={{ backgroundImage: 'url(https://i0.wp.com/www.tipsnepal.com/wp-content/uploads/2022/03/f3437-aboutus_image1-1.jpg?resize=720%2C405&quality=100&strip=all&ssl=1)' }}>
-        <MDBRow className='d-flex justify-content-center align-items-center h-100'>
+      <MDBContainer fluid className='d-flex align-items-center justify-content-center bg-image' style={{ backgroundImage: 'url(https://i0.wp.com/www.tipsnepal.com/wp-content/uploads/2022/03/f3437-aboutus_image1-1.jpg?resize=720%2C405&quality=100&strip=all&ssl=1)' }}>
+        <MDBRow className='d-flex justify-content-center align-items-center h-100' >
           <MDBCol col='12'>
-            <MDBCard className='bg-white my-5 mx-auto' style={{ borderRadius: '1rem', maxWidth: '500px' }}>
+            <MDBCard className='bg-white my-5 mx-auto' style={{ borderRadius: '1rem', maxWidth: '500px' }} >
               <MDBCardBody className='p-5 w-100 d-flex flex-column'>
-
+                {/* <p style={{ color: "red" }}>{msg}</p> */}
                 <h2 className="fw-bold mb-2 text-center">Sign in</h2>
-                <p className="text-white-50 mb-3">Please enter your login and password!</p>
 
-                {(emailDirty && emailError) && <div style={{ color: "red" }}>{emailError}</div>}
-                <MDBInput onChange={e => emailHandler(e)} value={email} onBlur={e => blurHandler(e)} wrapperClass='mb-4 w-100' label='Email address' id='formControlLg' name="email" type='email' size="lg" />
+                <form onSubmit={submitHandler}>
+                  <MDBInput wrapperClass='mb-4 w-100' label='Email address'
+                   id='email' 
+                    type='email' size="lg"
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
 
-                {(passwordDirty && passwordError) && <div style={{ color: "red" }}>{passwordError}</div>}
-                <MDBInput onChange={e => passwordHandler(e)} value={password} onBlur={e => blurHandler(e)} wrapperClass='mb-4 w-100' label='Password' maxLength={24} id='formControlLg' name="password" type='password' size="lg" />
+                  <MDBInput wrapperClass='mb-4 w-100' label='Password' maxLength={32}
+                    id='password' 
+                    type='password' size="lg"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <p><Link to="/signup">Create an account</Link></p>
 
-                <MDBCheckbox name='flexCheck' id='flexCheckDefault' className='mb-4' label='Remember password' />
-                <p><Link to="/signup">Create an account</Link></p>
-
-                <MDBBtn disabled={!formValid} type='submit' size='lg'>
-                  Login
-                </MDBBtn>
+                  <MDBBtn type='submit' size='lg'>
+                    Login
+                  </MDBBtn>
+                </form>
                 <hr className="my-4" />
                 <MDBBtn className="mb-2 w-100" size="lg" style={{ backgroundColor: '#dd4b39' }}>
                   <MDBIcon fab icon="google" className="mx-2" />
