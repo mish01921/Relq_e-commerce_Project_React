@@ -1,9 +1,10 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect} from 'react'
 import "./header.css"
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { Container, Row } from "reactstrap"
 import logo from "../../assets/images/Logo-TrandBrand.jpg"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { signout } from '../../redux/actions/userActions'
 
 const nav_links = [
     {
@@ -27,7 +28,6 @@ function Header() {
     const menuRef = useRef(null)
     const navigate = useNavigate()
 
-
     const stickyHeaderFunc = () => {
         window.addEventListener("scroll", () => {
             if (
@@ -38,20 +38,20 @@ function Header() {
             }
         });
     };
-
     useEffect(() => {
         stickyHeaderFunc();
         return () => window.removeEventListener("scroll", stickyHeaderFunc)
     })
-
     const menuToggle = () => menuRef.current.classList.toggle("active_menu");
-
     const navigateToCart = () => {
         navigate("/cart")
     }
     const userSignIn = useSelector((state) => state.userSignin);
     const { userInfo } = userSignIn;
-    console.log(userInfo, 1111)
+    const dispatch = useDispatch();
+    const signoutHandler = () => {
+        dispatch(signout())
+    }
 
     return <header className='header' ref={headerRef}>
         <Container>
@@ -97,7 +97,6 @@ function Header() {
                         }
 
                         <NavLink to="/signup">Signup</NavLink>
-
                         <div className="mobile_menu">
                             <span onClick={menuToggle}>
                                 <i className="ri-menu-line"></i>

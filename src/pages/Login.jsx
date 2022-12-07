@@ -55,12 +55,14 @@ function Login() {
                     id='email'
                     type='email' size="lg"
                     onChange={(e) => setEmail(e.target.value)}
+                    required
                   />
 
                   <MDBInput wrapperClass='mb-4 w-100' label='Password' maxLength={32}
                     id='password'
                     type='password' size="lg"
                     onChange={(e) => setPassword(e.target.value)}
+                    required
                   />
                   <p><Link to={redirect ? `/signup?redirect=${redirect}` : "/sinup"}>Create an account</Link></p>
 
