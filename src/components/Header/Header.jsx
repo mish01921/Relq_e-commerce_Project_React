@@ -51,8 +51,8 @@ function Header() {
     }
     const userSignIn = useSelector((state) => state.userSignin);
     const { userInfo } = userSignIn;
-    console.log(userInfo,1111)
-   
+    console.log(userInfo, 1111)
+
     return <header className='header' ref={headerRef}>
         <Container>
             <Row>
@@ -89,13 +89,12 @@ function Header() {
                             <span className="badge">{totalQuantity}</span>
                         </span>
                         {
-                        userInfo ? (
-                            <Link to="/login">{userInfo.name}</Link>
-                        ) :(
-                            <Link to="/home">Sign In</Link>
-                        )
-                    }
-                       
+                            userInfo ? (
+                                <Link to="/login">{userInfo.name}</Link>
+                            ) : (
+                                <NavLink to="/login">Sign In</NavLink>
+                            )
+                        }
 
                         <NavLink to="/signup">Signup</NavLink>
 
@@ -114,4 +113,4 @@ function Header() {
 
 }
 
-export default Header
+export default Header;
