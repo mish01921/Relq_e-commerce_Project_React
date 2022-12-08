@@ -63,12 +63,13 @@
     color: rgb(53, 53, 130);
 }
 
-.nav_icon {
+ .nav_icon {
     display: flex;
     align-items: center;
-    column-gap: 1.2rem;
+    justify-content: space-around;
+    column-gap: 1.4rem;
 
-}
+} 
 
 .cart_icon,
 .fav_icon {
@@ -97,11 +98,32 @@
     cursor: pointer;
 }
 
-.nav_icon span img {
+.nav_icon .profile img {
     width: 30px;
     height: 30px;
     cursor: pointer;
     margin-bottom: 35%;
+    margin-left: 60%;
+    border-radius: 50%;
+}
+
+.nav_icon .profile {
+    position: absolute;
+    z-index: 9;
+}
+
+.nav_icon .profile .profile_actions {
+    position: absolute;
+    top: 100% ;
+    left: 0;
+    background: red;
+    width: 150px;
+    z-index: 10;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    line-height: 30px;
+    margin-left: 273%;
 }
 
 .mobile_menu {
