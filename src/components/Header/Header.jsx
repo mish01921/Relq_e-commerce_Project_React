@@ -1,11 +1,12 @@
-import React, { useRef, useEffect } from 'react'
-import "./header.css"
-import { NavLink, useNavigate } from 'react-router-dom'
-import { Container, Row } from "reactstrap"
-import logo from "../../assets/images/Logo-TrandBrand.jpg"
-import userIcon from "../../assets/images/user-icon.png"
+import React, { useRef, useEffect } from 'react';
+import "./header.css";
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Container, Row } from "reactstrap";
 import { motion } from "framer-motion"
-import { useSelector } from "react-redux"
+import logo from "../../assets/images/Logo-TrandBrand.jpg";
+import userIcon from "../../assets/images/user-icon.png";
+import { useDispatch, useSelector } from "react-redux";
+import { signout } from '../../redux/actions/userActions';
 
 const nav_links = [
     {
@@ -29,7 +30,6 @@ function Header() {
     const menuRef = useRef(null)
     const navigate = useNavigate()
 
-
     const stickyHeaderFunc = () => {
         window.addEventListener("scroll", () => {
             if (
@@ -40,16 +40,21 @@ function Header() {
             }
         });
     };
-
     useEffect(() => {
         stickyHeaderFunc();
         return () => window.removeEventListener("scroll", stickyHeaderFunc)
     })
-
     const menuToggle = () => menuRef.current.classList.toggle("active_menu");
-
     const navigateToCart = () => {
         navigate("/cart")
+    }
+    const userSignIn = useSelector((state) => state.userSignin);
+    const { userInfo } = userSignIn;
+    const dispatch = useDispatch();
+    const signoutHandler = () => {
+        console.log(signoutHandler)
+        dispatch(signout())
+
     }
 
     return <header className='header' ref={headerRef}>
@@ -83,12 +88,46 @@ function Header() {
                         </span>
 
 
-                        <span className="cart_icon" onClick={navigateToCart}> 
+                        <span className="cart_icon" onClick={navigateToCart}>
                             <i className="ri-shopping-bag-line"></i>
                             <span className="badge">{totalQuantity}</span>
                         </span>
 
-                        <span><motion.img whileTap={{ scale: 1.2 }} src={userIcon} alt="" /></span>
+                    
+                        {
+                            userInfo ? (
+                            <div className="dropdown">
+                                <Link to="#">
+                                   
+                                    <div className="profile"><motion.img whileTap={{ scale: 1.2 }} src={userIcon} alt="" /></div>
+                        <div className="profile_actions"></div>
+                                </Link>
+                               
+                                   <Link to="#signout" onClick={signoutHandler}> 
+                                    Sign out
+                                   </Link>
+                                
+                            </div>
+                           
+                            )
+                            :
+                            (
+                                <>
+                                <Link to="/signup">Signup</Link>
+                                <Link to="/login">Sign In</Link>
+                                </>
+                            )
+                            } 
+
+                        {/* <div className="profile"><motion.img whileTap={{ scale: 1.2 }} src={userIcon} alt="" /></div>
+                        <div className="profile_actions">
+                            {
+                                userInfo ? <span>Logout</span> : <div>
+                                    <Link to="/signup">Signup</Link>
+                                    <Link to="/login">Login</Link>
+                                </div>
+                            }
+                        </div> */}
 
                         <div className="mobile_menu">
                             <span onClick={menuToggle}>
@@ -105,4 +144,4 @@ function Header() {
 
 }
 
-export default Header
+export default Header;
