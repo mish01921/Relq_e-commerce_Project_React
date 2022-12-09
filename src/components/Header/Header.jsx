@@ -6,14 +6,14 @@ import { motion } from "framer-motion"
 import logo from "../../assets/images/Logo-TrandBrand.jpg";
 import userIcon from "../../assets/images/user-icon.png";
 import { useDispatch, useSelector } from "react-redux";
-import { signout } from '../../redux/actions/userActions';
+import { signout  } from '../../redux/actions/userActions';
 
 const nav_links = [
     {
         path: "home",
         display: "Home"
     },
-    {
+    { 
         path: "shop",
         display: "Shop"
     },

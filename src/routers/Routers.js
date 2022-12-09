@@ -8,6 +8,10 @@ import Checkout from "../pages/Checkout";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 
+// import AddProducts from "../adminDashboard/AddProducts";
+// import AllProducts from "../AdminDashboard/AllProducts";
+
+
 function Routers() {
  
   return <Routes>
