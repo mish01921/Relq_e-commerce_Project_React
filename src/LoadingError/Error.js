@@ -1,11 +1,15 @@
 import React from "react";
+const Error = ({ children, ...props }) => {
+    return (
 
-const Message = ({variant,children}) => {
-    return <div className={`alert ${variant}`}>{children}</div>;
-}
+      <div
+        style={{ color: '#f23838', textAlign: 'center', margin: '0.5rem 0' }}
+        {...props}
+      >
+        {children}
+      </div>
 
-Message.defaultProps = {
-    variant: "alert-info",
-};
-
-export default Message;
+    )
+  }
+  
+  export default Error

@@ -1,31 +1,12 @@
-import { combineReducers, configureStore} from "@reduxjs/toolkit";
-import { userSigninReducer,userRegisterReducer } from "./reducers/userReducers";
 import cartSlice from "./slices/cartSlice";
+import userReducer from "../redux/slices/userSlice"
+import { configureStore } from "@reduxjs/toolkit";
 
-// const store = configureStore({
-//     reducer:{
-//         cart: cartSlice,
-//         userSignin: userSingninReducer,
-//         userRegister: userRegisterReducer
-//     },
-// });
-
-
-const initialState = {
-    userSignin: {
-        userInfo: localStorage.getItem("userInfo") 
-        ? JSON.parse(localStorage.getItem("userInfo")): null
-    }
-}
-const reducers = combineReducers({
- userSignin: userSigninReducer,
-  userRegister: userRegisterReducer,
-  cart: cartSlice
-})
-
-const store = configureStore(
-   {reducer: reducers},
-    initialState,
-  );
+ const store = configureStore({
+    reducer:{
+          cart: cartSlice,
+          user: userReducer
+       },
+   });
 
 export default store;

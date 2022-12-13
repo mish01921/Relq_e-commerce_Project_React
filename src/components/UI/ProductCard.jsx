@@ -1,10 +1,10 @@
-import React from 'react'
-import { motion } from "framer-motion"
-import "../../styles/product-card.css"
-import { Col } from "reactstrap"
-import { Link } from 'react-router-dom'
-import { useDispatch } from "react-redux"
-import { cartActions } from "../../redux/slices/cartSlice"
+import React from 'react';
+import { motion } from "framer-motion";
+import "../../styles/product-card.css";
+import { Col } from "reactstrap";
+import { Link } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../redux/slices/cartSlice";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -19,11 +19,7 @@ function ProductCard({ item }) {
       imgUrl: item.imgUrl,
     })
     );
-  
        toast.success("Product added successfully")
-   
-   
-
   }
 
   return (

@@ -52,7 +52,6 @@ function Shop() {
                 <option value="Laptop">Laptop</option>
                 <option value="BestSales">BestSales</option>
                 <option value="Accessories">Accessories</option>
-                <option value="">Anun</option>
               </select>
             </div>
           </Col>

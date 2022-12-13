@@ -17,7 +17,6 @@ root.render(
           position="top-right"
           autoClose={3000}             
           pauseOnHover={false}
-         
         />
         {/* Same as */}
         <ToastContainer />
