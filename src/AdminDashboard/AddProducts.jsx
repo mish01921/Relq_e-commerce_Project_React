@@ -2,8 +2,8 @@ import React from 'react'
 
 function AddProducts() {
   return (
-    <div>AddProducts</div>
+    <div>AddPsdsdsdsdroducts</div>
   )
 }
 
-export default AddProducts;
+export default AddProducts

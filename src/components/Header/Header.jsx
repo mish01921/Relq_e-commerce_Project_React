@@ -53,7 +53,6 @@ function Header() {
         console.log(signoutHandler)
         dispatch(signout())
     }
-console.log(userInfo,111111)
     return <header className='header' ref={headerRef}>
         <Container>
             <Row>
