@@ -1,8 +1,10 @@
 import React from 'react';
 
 function AllProducts() {
+  console.log(1111111)
   return (
-    <div>AllProducts</div>
+    
+    <h1>ujikjjkkj</h1>
   )
 }
 

@@ -204,3 +204,29 @@
         line-height: 60px;
     }
 }
+.dropdown {
+  display: inline-block;
+  position: relative;
+  
+}
+.dropdown a {
+    color:#000 !important;
+    font-weight: 600;  
+}
+.dropdown-content {
+    
+  position: absolute;
+  display: none;
+  right: 0;
+  top: 95%;
+  padding-right: 30px;
+  list-style-type: none;
+  z-index: 1;
+  background-color: #2030407a;
+  margin: 0;
+ 
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+

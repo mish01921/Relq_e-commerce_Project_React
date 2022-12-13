@@ -2,18 +2,16 @@ import React, { useRef, useEffect } from 'react';
 import "./header.css";
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { Container, Row } from "reactstrap";
-import { motion } from "framer-motion"
 import logo from "../../assets/images/Logo-TrandBrand.jpg";
-import userIcon from "../../assets/images/user-icon.png";
 import { useDispatch, useSelector } from "react-redux";
-import { signout  } from '../../redux/actions/userActions';
+import { signout } from '../../redux/actions/userActions';
 
 const nav_links = [
     {
         path: "home",
         display: "Home"
     },
-    { 
+    {
         path: "shop",
         display: "Shop"
     },
@@ -48,15 +46,14 @@ function Header() {
     const navigateToCart = () => {
         navigate("/cart")
     }
-    const userSignIn = useSelector((state) => state.userSignin);
-    const { userInfo } = userSignIn;
+ 
+    const  userInfo  = JSON.parse(localStorage.getItem("userInfo"))
     const dispatch = useDispatch();
     const signoutHandler = () => {
         console.log(signoutHandler)
         dispatch(signout())
-
     }
-
+console.log(userInfo,111111)
     return <header className='header' ref={headerRef}>
         <Container>
             <Row>
@@ -81,6 +78,7 @@ function Header() {
                         </ul>
                     </div>
 
+
                     <div className="nav_icon">
                         <span className="fav_icon">
                             <i className="ri-heart-line"></i>
@@ -93,41 +91,27 @@ function Header() {
                             <span className="badge">{totalQuantity}</span>
                         </span>
 
-                    
+
                         {
                             userInfo ? (
-                            <div className="dropdown">
-                                <Link to="#">
-                                   
-                                    <div className="profile"><motion.img whileTap={{ scale: 1.2 }} src={userIcon} alt="" /></div>
-                        <div className="profile_actions"></div>
-                                </Link>
-                               
-                                   <Link to="#signout" onClick={signoutHandler}> 
-                                    Sign out
-                                   </Link>
-                                
-                            </div>
-                           
-                            )
-                            :
-                            (
-                                <>
-                                <Link to="/signup">Signup</Link>
-                                <Link to="/login">Sign In</Link>
-                                </>
-                            )
-                            } 
-
-                        {/* <div className="profile"><motion.img whileTap={{ scale: 1.2 }} src={userIcon} alt="" /></div>
-                        <div className="profile_actions">
-                            {
-                                userInfo ? <span>Logout</span> : <div>
-                                    <Link to="/signup">Signup</Link>
-                                    <Link to="/login">Login</Link>
+                                <div className="dropdown">
+                                    <Link to="#">
+                                        {userInfo.name}<i className="ri-arrow-down-s-line"></i>{' '}
+                                    </Link>
+                                    <ul className="dropdown-content">
+                                        <Link to="#signout" onClick={signoutHandler}>
+                                            SignOut
+                                        </Link>
+                                    </ul>
                                 </div>
-                            }
-                        </div> */}
+                            ) : (
+                                <>
+                                    <Link to="/login" style={{color: "#000"}}>Sign In</Link>
+                                <Link to="/signup" style={{color: "#000"}}>Signup</Link>
+                                </>
+                            
+                            )}
+                       
 
                         <div className="mobile_menu">
                             <span onClick={menuToggle}>

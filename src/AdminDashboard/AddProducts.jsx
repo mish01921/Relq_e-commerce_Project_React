@@ -6,4 +6,4 @@ function AddProducts() {
   )
 }
 
-export default AddProducts
+export default AddProducts;
