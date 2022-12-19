@@ -1,4 +1,6 @@
 
+## Screenshots
+![App Screenshot](https://github.com/mish01921/Relq_e-commerce_Project_React/blob/main/src/ScreenShot/screencapture-localhost-3000-home-2022-12-19-15_45_49.png?raw=true)
 # TrandBrend ecommerce website
 This repo is intended for an online store, selling Laptops. It's a good start for beginners who want to take the first big step in programming.
 
