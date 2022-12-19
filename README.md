@@ -7,10 +7,13 @@
 3.**npm start** </p>
 
 <h2>Skills Used</h2>
-<p>1.Node.js
-2.React,React-Redux and Redux Toolkit
-3.For styles` Css3,Bootstrap(library)
-4.Axios
-5.Open the package.json file to see the rest of the dependencies</p>
+<ol>
+ <li>Node.js</li>
+ <li>React,React-Redux and Redux Toolkit</li>
+ <li>For styles` Css3,Bootstrap(library)</li>
+ <li>Axios</li>
+ <li>Open the package.json file to see the rest of the dependencies</li>
+</ol>
 [](url)
 ![Screenshot_3](https://user-images.githubusercontent.com/78207934/208372128-c15ec35d-11f9-4eaa-8a9e-db7d7225ff39.png)
+
