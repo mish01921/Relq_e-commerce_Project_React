@@ -1,19 +1,54 @@
-<h2>Welcome to my Repo!<h2>
-<h5>This repo is intended for an online store, selling laptops. It's a good start for beginners who want to take the first big step in programming.</h5>
 
- <h3>For the beginning`</h3>
-<p>1.Clone this repo https://github.com/mish01921/Relq_e-commerce_Project_React.git in your terminal(mac,linux or windows)
-2.After cloning **npm install** for installing all packeges
-3.**npm start** </p>
+# TrandBrend ecommerce website
+This repo is intended for an online store, selling Laptops. It's a good start for beginners who want to take the first big step in programming.
 
-<h2>Skills Used</h2>
-<ol>
- <li>Node.js</li>
- <li>React,React-Redux and Redux Toolkit</li>
- <li>For styles` Css3,Bootstrap(library)</li>
- <li>Axios</li>
- <li>Open the package.json file to see the rest of the dependencies</li>
-</ol>
-[](url)
-![Screenshot_3](https://user-images.githubusercontent.com/78207934/208372128-c15ec35d-11f9-4eaa-8a9e-db7d7225ff39.png)
+## For Begining
+- Clone this repo https://github.com/mish01921/Relq_e-commerce_Project_React.git in your terminal(mac,linux or windows)
+- After cloning **npm install** for installing all packeges
+- **npm start** 
+
+##  Frontend
+ 
+- Javascript
+- React Js
+- Redux,Redux-Toolkit
+- Css3 and Bootstrap for styling
+- Toast for loading
+- Remix icon
+- Framer-motion
+- Axios(Api fetching)
+
+## For Backend
+- Go to (https://github.com/mish01921/login_register_MySql.git) this repo
+
+## Important information
+Use text editors (vs code, sublime, atom, etc.) to work with this project
+
+## Main folders
+- src(this is where all the folders are located)
+- AdminDashboard(for admin panel)
+- Pages(cart,checkout,home,login,signup,shop,productDetali)
+- Components(footer,header,helmet,layout(for all routes),UI(clock,commonSection,productCard,productList))
+- Loadig(for loager and error mesagges)
+- Redux(action,constants,reducer,slice and store)
+- Routers(all route)
+- Services
+- Styles(all main styles)
+
+
+## Documentation
+
+[React js](https://reactjs.org/)
+[ReactStrap](https://reactstrap.github.io/?path=/story/home-installation--page)
+[Redux](https://redux.js.org/)
+[Redux-Toolkit](https://redux-toolkit.js.org/)
+
+
+## Authors
+
+- [mish01921](https://github.com/mish01921)
+
+
+
+
 
