@@ -26,7 +26,6 @@ function Login() {
   const redirect = location.search ? location.search.split("=")[1] : "/";
 
   const userSignin = useSelector((state) => state.userSignin);
-  console.log(userSignin)
   const { error, loading, userInfo } = userSignin;
 
   useEffect(() => {

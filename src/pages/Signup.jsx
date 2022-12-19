@@ -1,7 +1,7 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Helmet from "../components/Helmet/Helmet";
-import {useNavigate,useLocation} from "react-router-dom";
-import {useSelector,useDispatch} from "react-redux";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from 'react-router-dom';
 import {
   MDBBtn,
@@ -17,8 +17,8 @@ import Loading from '../LoadingError/Loading';
 
 
 function Signup() {
-const [name, setName] = useState('');
-const [surname, setSurName] = useState('');
+  const [name, setName] = useState('');
+  const [surname, setSurName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -31,19 +31,19 @@ const [surname, setSurName] = useState('');
   const redirect = location.search ? location.search.split("=")[1] : "/login"
 
   useEffect(() => {
-    if(userInfo) {
+    if (userInfo) {
       navigate(redirect)
     }
     return () => {
 
     }
-  },[userInfo])
+  }, [userInfo])
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(signup(name,surname, email, password,confirmPassword));
+    dispatch(signup(name, surname, email, password, confirmPassword));
   }
- return (
+  return (
     <Helmet title="Signup">
       <MDBContainer fluid className='d-flex align-items-center justify-content-center bg-image' style={{ backgroundImage: 'url(https://i0.wp.com/www.tipsnepal.com/wp-content/uploads/2022/03/f3437-aboutus_image1-1.jpg?resize=720%2C405&quality=100&strip=all&ssl=1)' }} >
         <div className='mask gradient-custom-3'></div>
@@ -51,7 +51,7 @@ const [surname, setSurName] = useState('');
           <MDBCardBody className='px-5'>
             <h2 className="text-uppercase text-center mb-5">Create an account</h2>
             {error && <Message variant="alert-danger">{error}</Message>}
-                {loading && <Loading />}
+            {loading && <Loading />}
 
             <form onSubmit={submitHandler}>
               <MDBInput wrapperClass='mb-4' label='Your Name' size='lg'
@@ -69,7 +69,7 @@ const [surname, setSurName] = useState('');
                 required
 
               />
-                
+
               <MDBInput wrapperClass='mb-4' label='Your Email' size='lg'
                 name='email'
                 type='email'
@@ -86,17 +86,17 @@ const [surname, setSurName] = useState('');
                 required
               />
 
-           
+
               <MDBInput wrapperClass='mb-4' label='Repeat your password' size='lg'
                 name='confirmPassword'
                 type='password'
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
-               
+
               />
 
               <div className='d-flex flex-row justify-content-center mb-4'>
-              <p><Link to={redirect ? `/login?redirect=${redirect}` : "/login"}>Already registered?</Link></p>
+                <p><Link to={redirect ? `/login?redirect=${redirect}` : "/login"}>Already registered?</Link></p>
 
               </div>
               <MDBBtn type='submit' className='mb-4 w-100 gradient-custom-4' size='lg'>Register</MDBBtn>
