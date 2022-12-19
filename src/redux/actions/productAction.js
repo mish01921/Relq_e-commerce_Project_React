@@ -10,7 +10,7 @@ export const addProduct = (productData) => async (dispatch) => {
 
    dispatch({
     type: ADD_PRODUCT_SUCCESS,
-    payload: data
+    payload: data.success
    })
   } catch (error) {
     dispatch({
