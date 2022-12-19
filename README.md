@@ -4,7 +4,7 @@
  <h3>For the beginning`</h3>
 <p>1.Clone this repo https://github.com/mish01921/Relq_e-commerce_Project_React.git in your terminal(mac,linux or windows)
 2.After cloning **npm install** for installing all packeges
-3.**npm start** ,/p>
+3.**npm start** </p>
 
 <h2>Skills Used</h2>
 <p>1.Node.js
