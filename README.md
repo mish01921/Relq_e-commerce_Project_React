@@ -1,5 +1,5 @@
 <h2>Welcome to my Repo!<h2>
-<p>This repo is intended for an online store, selling laptops. It's a good start for beginners who want to take the first big step in programming.</p>\
+<h5>This repo is intended for an online store, selling laptops. It's a good start for beginners who want to take the first big step in programming.</h5>
 
  <h3>For the beginning`</h3>
 <p>1.Clone this repo https://github.com/mish01921/Relq_e-commerce_Project_React.git in your terminal(mac,linux or windows)
