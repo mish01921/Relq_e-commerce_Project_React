@@ -7,11 +7,11 @@ import ProductDetalis from "../pages/ProductDetalis";
 import Checkout from "../pages/Checkout";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
-
+import ProtectedRoute from "./ProtectedRoute/protectedRoute";
 // import AddProducts from "../adminDashboard/AddProducts";
-// import AllProducts from "../AdminDashboard/AllProducts";
-
-
+import AllProducts from "../AdminDashboard/AllProducts";
+import Dashboard from "../AdminDashboard/Dashboard";
+import AddProducts from "../AdminDashboard/AddProducts";
 function Routers() {
  
   return <Routes>
@@ -20,7 +20,15 @@ function Routers() {
     <Route path="shop" element={<Shop/>} />
     <Route path="cart" element={<Cart/>} />
     <Route path="shop/:id" element={<ProductDetalis/>} />
-    <Route path="checkout" element={<Checkout/>} />
+  
+    
+    <Route path="checkout" element={ <ProtectedRoute ><Checkout/></ProtectedRoute> } />
+    <Route path="dashboard" element={<ProtectedRoute ><Dashboard/></ProtectedRoute> }/>
+    <Route path="dashboard/all-products" element={<AllProducts/>}/>
+    <Route path="dashboard/add-products" element={<AddProducts/>}/>
+
+   
+   
     <Route path="login" element={<Login/>} />
     <Route path="signup" element={<Signup/>} />
   </Routes>
