@@ -22,17 +22,14 @@ This repo is intended for an online store, selling Laptops. It's a good start fo
 ## For Backend
 - Go to (https://github.com/mish01921/login_register_MySql.git) this repo
 
-## Important information
-Use text editors (vs code, sublime, atom, etc.) to work with this project
-
 ## Main folders
 - src(this is where all the folders are located)
 - AdminDashboard(for admin panel)
 - Pages(cart,checkout,home,login,signup,shop,productDetali)
 - Components(footer,header,helmet,layout(for all routes),UI(clock,commonSection,productCard,productList))
-- Loadig(for loager and error mesagges)
+- Loading(for loader and error mesagges)
 - Redux(action,constants,reducer,slice and store)
-- Routers(all route)
+- Routers(all routes)
 - Services
 - Styles(all main styles)
 
