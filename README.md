@@ -11,7 +11,6 @@ This repo is intended for an online store, selling Laptops. It's a good start fo
 
 ##  Frontend
  
-- Javascript
 - React Js
 - Redux,Redux-Toolkit
 - Css3 and Bootstrap for styling
