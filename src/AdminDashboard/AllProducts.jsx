@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-import { Container, Row, Col} from 'reactstrap';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { Container, Row, Col } from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllProduct,deleteProdcut } from '../redux/actions/productAction';
+import { getAllProduct, deleteProdcut} from '../redux/actions/productAction';
 import Message from '../LoadingError/Error';
 import Loading from '../LoadingError/Loading';
 
@@ -11,19 +10,18 @@ function AllProducts() {
   const getAllProducts = useSelector((state) => state.getAllProducts)
   const { loading, error, products } = getAllProducts
 
+  const productDelete = useSelector((state) => state.productDelete)
+  const { error: errorDelete, success: successDelete } = productDelete
   useEffect(() => {
     dispatch(getAllProduct())
-  }, [dispatch])
+  }, [dispatch, successDelete, errorDelete])
 
   const deleteHandler = (id) => {
-    const productDelete = useSelector((state) => state.productDelete)
-    const {success: successDelete } = productDelete
-    useEffect(() => {
-      dispatch(deleteProdcut(id));
-    }, [dispatch, successDelete])
-  };
-  console.log(products)
+    if (window.confirm("Are you sure")) {
+      dispatch(deleteProdcut(id))
 
+    }
+  }
 
   return (
     <>
@@ -32,8 +30,8 @@ function AllProducts() {
           <Row>
             <Col lg="12">
               <table className="table">
-                  {error && <Message variant="alert-danger">{error}</Message>}
-                {loading &&  <Loading />}
+                {error && <Message variant="alert-danger">{error}</Message>}
+                {loading && <Loading />}
                 <thead>
                   <tr>
                     <th>ID</th>
@@ -45,13 +43,11 @@ function AllProducts() {
                   </tr>
                 </thead>
                 {
-
-                  products && products.map((item, id) => console.log(`localhost:5000/Images/${item.imgUrl}`) ||
-           
-                    <tbody item={item} key={id}>
+                  products && products.map((item, index) =>
+                    <tbody item={item} key={index}>
                       <tr>
                         <td>{item.id}</td>
-                        <td><img src={`localhost:5000/Images/${item.imgUrl}`} alt="" /></td>
+                        <td><img src={item.imgUrl} alt="" /></td>
                         <td>{item.title}</td>
                         <td>{item.category}</td>
                         <td>{`$${item.price}`}</td>

@@ -15,7 +15,6 @@ function Shop() {
     const filterValue = e.target.value
     if(filterValue === "Laptop") {
       const filteredProducts = products.filter(item => item.category === "Laptop" )
-
       setProductsData(filteredProducts)
     }
 
@@ -52,18 +51,10 @@ function Shop() {
                 <option value="Laptop">Laptop</option>
                 <option value="BestSales">BestSales</option>
                 <option value="Accessories">Accessories</option>
-                <option value="">Anun</option>
               </select>
             </div>
           </Col>
           <Col lg="3" md="6" className="text-end">
-            <div className="filter_widget">
-              <select>
-                <option>Sort by</option>
-                <option value="ascending">Ascending</option>
-                <option value="descending">Descending</option>
-              </select>
-            </div>
           </Col>
           <Col lg="6" md="12">
             <div className="search_box">

@@ -10,6 +10,7 @@ import {
     PRODUCT_DELETE_REQUEST,
     PRODUCT_DELETE_SUCCESS,
     PRODUCT_DELETE_FAIL,
+
 } from "../constants/productConstant";
 
 //Create Product
@@ -41,7 +42,7 @@ export const productGetAllReducer = (state = {}, action) => {
 };
 
 //Delete by ID
-export const  productDeleteReducer = (state =  {}, action) =>{
+export const  productDeleteReducer = (state = {}, action) =>{
     switch (action.type) {
       case PRODUCT_DELETE_REQUEST:
         return { loading: true };

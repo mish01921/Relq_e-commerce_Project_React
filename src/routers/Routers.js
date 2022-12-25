@@ -8,10 +8,11 @@ import Checkout from "../pages/Checkout";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import ProtectedRoute from "./ProtectedRoute/protectedRoute";
-// import AddProducts from "../adminDashboard/AddProducts";
+
 import AllProducts from "../AdminDashboard/AllProducts";
 import Dashboard from "../AdminDashboard/Dashboard";
 import AddProducts from "../AdminDashboard/AddProducts";
+import Users from "../AdminDashboard/Users";
 function Routers() {
  
   return <Routes>
@@ -26,6 +27,7 @@ function Routers() {
     <Route path="dashboard" element={<ProtectedRoute ><Dashboard/></ProtectedRoute> }/>
     <Route path="dashboard/all-products" element={<AllProducts/>}/>
     <Route path="dashboard/add-products" element={<AddProducts/>}/>
+    <Route path="dashboard/users" element={<Users />}/>
 
    
    

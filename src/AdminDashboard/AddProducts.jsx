@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, FormGroup } from "reactstrap";
 import { Fragment } from 'react';
-import { Link, useLocation, useNavigate } from "react-router-dom"
 import { useDispatch,useSelector } from 'react-redux';
 import { createProduct } from '../redux/actions/productAction';
 import Message from '../LoadingError/Error';
@@ -15,8 +14,6 @@ function AddProducts() {
   const [category, setCategory] = useState("");
   const [imgUrl, setImgUrl] = useState([]);
   const [published, setPublished] = useState(true)
-  const location = useLocation();
-  const navigate = useNavigate()
   const dispatch = useDispatch()
 
   const categories = [

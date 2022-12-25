@@ -1,6 +1,6 @@
 import {  configureStore} from "@reduxjs/toolkit";
 import { userSigninReducer,userRegisterReducer } from "./reducers/userReducers";
-import {producCreateReducer,productGetAllReducer,productDeleteReducer } from "./reducers/productReducer";
+import {producCreateReducer, productGetAllReducer, productDeleteReducer } from "./reducers/productReducer";
 import cartSlice from "./slices/cartSlice";
 
 

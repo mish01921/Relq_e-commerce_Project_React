@@ -53,7 +53,6 @@ function Checkout() {
             <div className="checkout_cart">
               <h6>Total Qty: <span>{totalQty} items</span></h6>
               <h6>SubTotal: <span>{totalAmount}</span></h6>
-              <h6>SubTotal: <span>$1200</span></h6>
               <h6>
                 <span>
                 Shipping:<br/>
