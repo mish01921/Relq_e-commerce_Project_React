@@ -31,9 +31,6 @@ const cartSlice = createSlice({
             }
             state.totalAmount = state.cartItems.reduce((total,item) => total + Number(item.price) * Number(item.quantity),0
             );
-            // console.log(state.totalQuantity)
-            // console.log(state.cartItems)
-            // console.log(newItem)
         },
         deleteItem: (state,action) => {
             const id = action.payload

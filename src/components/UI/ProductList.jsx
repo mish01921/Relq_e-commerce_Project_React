@@ -9,7 +9,5 @@ function ProductList({ data }) {
       <ProductCard item={item} key={index}/>
      ))} 
      </Fragment>
-    
-  
      }
 export default ProductList;

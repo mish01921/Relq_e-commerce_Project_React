@@ -19,11 +19,7 @@ function ProductCard({ item }) {
       imgUrl: item.imgUrl,
     })
     );
-  
        toast.success("Product added successfully")
-   
-   
-
   }
 
   return (
