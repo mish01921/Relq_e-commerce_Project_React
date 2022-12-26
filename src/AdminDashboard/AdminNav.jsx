@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container,Row,Col } from 'reactstrap';
+import { Container,Row } from 'reactstrap';
 import BestSales from "../assets/images/BestSales01.png";
 import "../styles/admin-nav.css";
 import { NavLink } from 'react-router-dom';

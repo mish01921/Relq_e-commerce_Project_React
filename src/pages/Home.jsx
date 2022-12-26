@@ -105,9 +105,7 @@ const [accessories,setAccessories] = useState([]);
             <ProductList data={accessories} />
           </Row>
         </Container>
-
       </section>
-
     </Helmet >
   )
 }

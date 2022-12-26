@@ -7,7 +7,7 @@ import { Container, Row, Col} from "reactstrap";
 
 import { motion } from "framer-motion";
 import { cartActions } from "../redux/slices/cartSlice";
-import { useSelector, useDispatch } from "react-redux"
+import { useSelector, useDispatch } from "react-redux";
 
 
 function Cart() {

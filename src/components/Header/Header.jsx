@@ -46,8 +46,8 @@ function Header() {
     const navigateToCart = () => {
         navigate("/cart")
     }
- 
-    const  userInfo  = JSON.parse(localStorage.getItem("userInfo"))
+
+    const userInfo = JSON.parse(localStorage.getItem("userInfo"))
     const dispatch = useDispatch();
     const signoutHandler = () => {
         console.log(signoutHandler)
@@ -79,12 +79,6 @@ function Header() {
 
 
                     <div className="nav_icon">
-                        <span className="fav_icon">
-                            <i className="ri-heart-line"></i>
-                            <span className="badge">2</span>
-                        </span>
-
-
                         <span className="cart_icon" onClick={navigateToCart}>
                             <i className="ri-shopping-bag-line"></i>
                             <span className="badge">{totalQuantity}</span>
@@ -105,12 +99,11 @@ function Header() {
                                 </div>
                             ) : (
                                 <>
-                                    <Link to="/login" style={{color: "#000"}}>Sign In</Link>
-                                <Link to="/signup" style={{color: "#000"}}>Signup</Link>
+                                    <Link to="/login" style={{ color: "#000" }}>Sign In</Link>
+                                    <Link to="/signup" style={{ color: "#000" }}>Signup</Link>
                                 </>
-                            
+
                             )}
-                       
 
                         <div className="mobile_menu">
                             <span onClick={menuToggle}>
