@@ -23,7 +23,7 @@ import productImg16 from "../images/accessories-07.png";
 const products = [
     {
       id: "001",
-      productName: "Stone and Beam Westview ",
+      productName: "Nitro5_AN515 ",
       imgUrl: productImg001,
       category: "Laptop",
       price: 1230,
@@ -42,7 +42,7 @@ const products = [
     
     {
       id: "002",
-      productName: "Stone and Beam Westview ",
+      productName: "Acer Gaming Laptop",
       imgUrl: productImg002,
       category: "Laptop",
       price: 1800,
@@ -60,7 +60,7 @@ const products = [
     },
     {
       id: "003",
-      productName: "Stone and Beam Westview ",
+      productName: "Samsung-galaxy-book-2-pro-360",
       imgUrl: productImg003,
       category: "Laptop",
       price: 1800,
@@ -78,7 +78,7 @@ const products = [
     },
     {
       id: "01",
-      productName: "",
+      productName: "Lenovo ThinkBook",
       imgUrl: productImg01,
       category: "BestSales",
       price: 980,
@@ -96,7 +96,7 @@ const products = [
     },
     {
       id: "02",
-      productName: "",
+      productName: "Msi_Gaming_Laptop",
       imgUrl: productImg02,
       category: "BestSales",
       price: 1100,
@@ -114,7 +114,7 @@ const products = [
     },
     {
       id: "03",
-      productName: "",
+      productName: "Dell-xps-13-9315",
       imgUrl: productImg03,
       category: "BestSales",
       price: 880,
@@ -132,7 +132,7 @@ const products = [
     },
     {
       id: "04",
-      productName: "",
+      productName: "Magicbook",
       imgUrl: productImg04,
       category: "BestSales",
       price: 1200,
@@ -150,7 +150,7 @@ const products = [
     },
     {
       id: "05",
-      productName: "",
+      productName: "Lenovo RTX-500",
       imgUrl: productImg05,
       category: "BestSales",
       price: 980,
@@ -168,7 +168,7 @@ const products = [
     },
     {
       id: "06",
-      productName: "",
+      productName: "MSI_NB_GE76",
       imgUrl: productImg06,
       category: "BestSales",
       price: 980,
@@ -186,7 +186,7 @@ const products = [
     },
     {
       id: "07",
-      productName: "BestSales",
+      productName: "LG-i7 1289U",
       imgUrl: productImg07,
       category: "BestSales",
       price: 1250,
@@ -204,7 +204,7 @@ const products = [
     },
     {
       id: "08",
-      productName: "",
+      productName: "Macbook-M1",
       imgUrl: productImg08,
       category: "BestSales",
       price: 1800,
@@ -222,7 +222,7 @@ const products = [
     },
     {
       id: "09",
-      productName: "",
+      productName: "Mini-Table-For-Laptop",
       imgUrl: productImg09,
       category: "Accessories",
       price: 12,
@@ -241,7 +241,7 @@ const products = [
 
     {
       id: "10",
-      productName: "",
+      productName: "Laptop_bag",
       imgUrl: productImg10,
       category: "Accessories",
       price: 30,
@@ -259,7 +259,7 @@ const products = [
     },
     {
       id: "11",
-      productName: "",
+      productName: "Multifunctional-table",
       imgUrl: productImg11,
       category: "Accessories",
       price: 35,
@@ -277,7 +277,7 @@ const products = [
     },
     {
       id: "12",
-      productName: "",
+      productName: "Charger",
       imgUrl: productImg12,
       category: "Accessories",
       price: 45,
@@ -295,7 +295,7 @@ const products = [
     },
     {
       id: "13",
-      productName: "",
+      productName: "Sticky_keyboard",
       imgUrl: productImg13,
       category: "Accessories",
       price: 10,
@@ -313,7 +313,7 @@ const products = [
     },
     {
       id: "14",
-      productName: "",
+      productName: "HDMI_USB",
       imgUrl: productImg14,
       category: "Accessories",
       price: 64,
@@ -332,7 +332,7 @@ const products = [
 
     {
       id: "15",
-      productName: "",
+      productName: "Mouse",
       imgUrl: productImg15,
       category: "Accessories",
       price: 35,
@@ -350,7 +350,7 @@ const products = [
     },
     {
       id: "16",
-      productName: "",
+      productName: "Microschema",
       imgUrl: productImg16,
       category: "Accessories",
       price: 48,

@@ -99,8 +99,10 @@ function Header() {
                                 </div>
                             ) : (
                                 <>
+                                <div>
                                     <Link to="/login" style={{ color: "#000" }}>Sign In</Link>
                                     <Link to="/signup" style={{ color: "#000" }}>Signup</Link>
+                                    </div>
                                 </>
 
                             )}
